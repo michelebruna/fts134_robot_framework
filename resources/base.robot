@@ -26,4 +26,4 @@ Ler Json
     ${arquivo}      get file    ${EXECDIR}/resources/fixtures/${nome_arquivo}
     ${arquivo_json} evaluate    json.loads(${arquivo})      json
 
-    [return]        ${arquivo_json}
+    [RETURN]        ${arquivo_json}

@@ -8,7 +8,7 @@ Test Teardown   Fechar Navegador
 
 *** Test Cases ***
 Comprar primeira passagem para o destino
-    Selecionar origem e destino do voo
+    Selecionar origem e destino do voo  ${origem}   ${destino}
     Selecionar o primeiro voo da lista
     Preencher nome "Juca"
     Selecionar bandeira "American Express"
@@ -18,7 +18,7 @@ Comprar primeira passagem para o destino
     Validar o preco da passagem "555 USD"
 
 Comprar primeira passagem pagamento com Diners
-    Selecionar origem e destino do voo
+    Selecionar origem e destino do voo  ${origem}   ${destino}
     Selecionar o primeiro voo da lista
     Preencher nome "Maria"
     Selecionar bandeira "Diner's Club"
@@ -28,8 +28,8 @@ Comprar primeira passagem pagamento com Diners
     Validar o preco da passagem "555 USD"
 
 Comprar uma passagem da lista
-    Selecionar origem e destino do voo
-    Selecionar o voo numero "3"
+    Selecionar origem e destino do voo  ${origem}   ${destino}
+    Selecionar o voo numero "${num}"
     Preencher nome "Claudia"
     Selecionar bandeira "Visa"
     Clicar em Lembrar de Mim

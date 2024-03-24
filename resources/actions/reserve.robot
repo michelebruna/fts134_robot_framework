@@ -2,14 +2,19 @@
 Documentation    Suite description
 Library          SeleniumLibrary
 
+*** Variables ***
+${num}  3
+
 *** Keywords ***
 Selecionar o primeiro voo da lista
     wait until element is enabled   class = btn.btn-small   30
     click button                    class = btn.btn-small
 
 Selecionar o voo numero "${num}"
-    wait until element is enabled   css = tr:nth-child(${num}).btn 30
-    click button                    css = tr:nth-child(${num}).btn
+    [Arguments] ${num}
+    ${selector} Set Variable xpath=//table[@class='table']//tbody//tr[${num}]//input
+    wait until element is enabled ${selector} 5
+    click element ${selector}
 
 Validar o titulo de origem e destino
     [Arguments] ${origem}   ${destino}
